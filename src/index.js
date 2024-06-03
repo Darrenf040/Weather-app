@@ -7,10 +7,13 @@ async function getCurrentWeather(userLocation) {
     mode: "cors",
   });
 
-  //wait for response to be converted to json
-  const response = await currentWeather.json();
+  try {
+    //wait for response to be converted to json
+    const response = await currentWeather.json();
 
-  console.log(currentWeather);
-  console.log(response);
+    console.log(response);
+  } catch (err) {
+    console.error(err);
+  }
 }
-getCurrentWeather("Houston");
+getCurrentWeather("");

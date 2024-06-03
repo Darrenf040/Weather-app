@@ -15,18 +15,28 @@ export async function weatherLocationData(userLocation) {
     console.error(err);
   }
 }
-weatherLocationData("houston");
+
+//json with the locations data
+const weatherResponse = await weatherLocationData("London"); //adding await returns the promises value
 
 //returns locations temerature in fareignheight
-function getCurrentTempF(locationDataJson) {
-  return locationDataJson.current.temp_f;
+function getCurrentTempF() {
+  return weatherResponse.current.temp_f;
 }
 
 //returns locations temerature in celsius
-function getCurrentTempC(locationDataJson) {
-  return locationDataJson.current.temp_c;
+function getCurrentTempC() {
+  return weatherResponse.current.temp_c;
 }
-//returns locatoins wind speed in mph
-function getCurrentWindSpeed(locationDataJson) {
-  return locationDataJson.wind_mph;
+//returns locations wind speed in mph
+function getCurrentWindSpeed() {
+  return weatherResponse.current.wind_mph;
 }
+
+function printLocationData() {
+  console.log(getCurrentTempF());
+  console.log(getCurrentTempC());
+  console.log(getCurrentWindSpeed());
+}
+
+printLocationData();

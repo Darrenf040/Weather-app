@@ -10,9 +10,29 @@ export async function forecastLocationData(city) {
     const forecastData = await forecastResponse.json();
     return forecastData;
   } catch (err) {
-    console.error(err);
+    console.error(err.error);
   }
 }
 
-const currentForecast = await forecastLocationData("Houston");
-console.log(currentForecast);
+const currentForecast = await forecastLocationData("houston");
+
+//returns the high temp (fahrenheit) for the day
+function getHighTemp() {
+  return currentForecast.forecast.forecastday[0].day.maxtemp_f;
+}
+//returns the low temp (fahrenheit) for the day
+function getLowTemp() {
+  return currentForecast.forecast.forecastday[0].day.mintemp_f;
+}
+//returns the average temp (fahrenheit) for the day
+function getAvgTemp() {
+  return currentForecast.forecast.forecastday[0].day.avgtemp_f;
+}
+
+function printAllData() {
+  console.log("High:", getHighTemp());
+  console.log("Low:", getLowTemp());
+  console.log("Avg:", getAvgTemp());
+}
+
+printAllData();

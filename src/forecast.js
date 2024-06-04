@@ -1,4 +1,4 @@
-export async function forecastLocationData(city) {
+export default async function forecastLocationData(city) {
   const forecastUrl = `http://api.weatherapi.com/v1/forecast.json?key=318ddc196cd94dffaab10400243105&q=${city}`;
 
   //wait for forecast api call
@@ -14,25 +14,17 @@ export async function forecastLocationData(city) {
   }
 }
 
-const currentForecast = await forecastLocationData("houston");
-
 //returns the high temp (fahrenheit) for the day
-function getHighTemp() {
-  return currentForecast.forecast.forecastday[0].day.maxtemp_f;
+function getHighTemp(forecastData) {
+  return forecastData.forecast.forecastday[0].day.maxtemp_f;
 }
 //returns the low temp (fahrenheit) for the day
-function getLowTemp() {
-  return currentForecast.forecast.forecastday[0].day.mintemp_f;
+function getLowTemp(forecastData) {
+  return forecastData.forecast.forecastday[0].day.mintemp_f;
 }
 //returns the average temp (fahrenheit) for the day
-function getAvgTemp() {
-  return currentForecast.forecast.forecastday[0].day.avgtemp_f;
+function getAvgTemp(forecastData) {
+  return forecastData.forecast.forecastday[0].day.avgtemp_f;
 }
 
-function printAllData() {
-  console.log("High:", getHighTemp());
-  console.log("Low:", getLowTemp());
-  console.log("Avg:", getAvgTemp());
-}
-
-printAllData();
+export { getHighTemp, getLowTemp, getAvgTemp };

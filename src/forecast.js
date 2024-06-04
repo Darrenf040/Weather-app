@@ -16,15 +16,15 @@ export default async function forecastLocationData(city) {
 
 //returns the high temp (fahrenheit) for the day
 function getHighTemp(forecastData) {
-  return forecastData.forecast.forecastday[0].day.maxtemp_f;
+  return Math.round(forecastData.forecast.forecastday[0].day.maxtemp_f);
 }
 //returns the low temp (fahrenheit) for the day
 function getLowTemp(forecastData) {
-  return forecastData.forecast.forecastday[0].day.mintemp_f;
+  return Math.round(forecastData.forecast.forecastday[0].day.mintemp_f);
 }
 //returns the average temp (fahrenheit) for the day
 function getAvgTemp(forecastData) {
-  return forecastData.forecast.forecastday[0].day.avgtemp_f;
+  return Math.round(forecastData.forecast.forecastday[0].day.avgtemp_f);
 }
 
 export { getHighTemp, getLowTemp, getAvgTemp };

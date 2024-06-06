@@ -14,12 +14,7 @@
             alt=""
             class="location-icon"
           />
-          <input
-            type="search"
-            id="city"
-            name="City"
-            placeholder="Enter a city"
-          />
+          <input type="text" id="city" name="City" placeholder="Enter a city" />
           <button type="submit" class="search-city">
             <img
               class="search-icon"
@@ -29,7 +24,21 @@
           </button>
         </div>
       </form>
+      <div class="current-weather-container hidden">
+        <div class="weather-icon-container">
+          <img class="weather-icon" alt="" />
+        </div>
+        <div class="weather-status-container hidden">
+          <p class="current-weather"></p>
+          <p class="weather-status"></p>
+          <div class="high-low-container hidden">
+            <p class="high"></p>
+            <p class="low"></p>
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="forecast-container hidden"></div>
     <script src="main.js"></script>
   </body>
 </html>

@@ -7,11 +7,18 @@ body {
   align-items: center;
   background-color: darkblue;
 }
+p {
+  margin: 0;
+}
 .weather-card {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   padding: 15px;
   border-radius: 30px;
   width: 300px;
   background-color: white;
+  /* height: 400px; */
 }
 .search-container {
   display: flex;
@@ -36,4 +43,33 @@ body {
 #city {
   outline: none;
   border: none;
+  font-size: 16px;
+}
+#city:focus {
+  background-color: none;
+}
+.weather-icon {
+  width: 150px;
+  height: 150px;
+}
+.weather-icon-container {
+  display: flex;
+  justify-content: center;
+}
+
+.weather-status-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.current-weather {
+  font-size: 40px;
+}
+.high-low-container {
+  display: flex;
+  gap: 20px;
+}
+.hidden {
+  display: none;
 }

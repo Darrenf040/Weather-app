@@ -8,6 +8,7 @@ import forecastLocationData, {
   getLowTemp,
   getAvgTemp,
 } from "./forecast.js";
+import "./weatherStatus.js";
 
 const citySearchBox = document.getElementById("city");
 const confirmSearch = document.querySelector(".search-city");

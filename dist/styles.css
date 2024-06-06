@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: darkblue;
+}
+.weather-card {
+  padding: 15px;
+  border-radius: 30px;
+  width: 300px;
+  background-color: white;
+}
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.search-icon {
+  width: 15px;
+  height: 15px;
+}
+.location-icon {
+  width: 20px;
+  height: 20px;
+}
+.search-city {
+  border-radius: 50%;
+  border-style: none;
+  padding: 8px;
+  background-color: lightblue;
+}
+#city {
+  outline: none;
+  border: none;
+}

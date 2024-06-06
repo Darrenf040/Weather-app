@@ -3,13 +3,33 @@
   <head>
     <meta charset="utf-8" />
     <title>Getting Started</title>
+    <link rel="stylesheet" href="/dist/styles.css" />
   </head>
   <body>
-    <form action="#">
-      <label for="city">Enter a City</label>
-      <input type="text" id="city" name="City" />
-      <button type="submit" class="search-city">Submit</button>
-      <script src="main.js"></script>
-    </form>
+    <div class="weather-card">
+      <form action="#">
+        <div class="search-container">
+          <img
+            src="/src/assets/images/location-icon.svg"
+            alt=""
+            class="location-icon"
+          />
+          <input
+            type="search"
+            id="city"
+            name="City"
+            placeholder="Enter a city"
+          />
+          <button type="submit" class="search-city">
+            <img
+              class="search-icon"
+              src="/src/assets/images/search-icon.svg"
+              alt=""
+            />
+          </button>
+        </div>
+      </form>
+    </div>
+    <script src="main.js"></script>
   </body>
 </html>
